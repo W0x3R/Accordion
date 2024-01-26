@@ -29,6 +29,10 @@ body {
 
 	&__content {
 		width: 100%;
+
+		&:hover > .main__label-image {
+			height: auto;
+		}
 	}
 
 	&__label-title {
@@ -45,8 +49,7 @@ body {
 		margin: 0 0 0.4rem;
 
 		&:hover .main__svg {
-			transition: transform 0.5s;
-			transform: rotate(180deg);
+			transform: rotate(720deg);
 		}
 	}
 
@@ -66,9 +69,10 @@ body {
 	}
 
 	&__svg {
-		width: 25px;
-		height: 25px;
+		width: 30px;
+		height: 30px;
 		stroke: black;
+		transition: transform 1.3s linear;
 	}
 }
 
@@ -77,5 +81,9 @@ input {
 
 	&:checked + .main__label-title > .main__svg {
 		stroke: red;
+	}
+
+	&:checked + .main__label-title + .main__label-image {
+		height: auto;
 	}
 }
