@@ -1,17 +1,19 @@
 @import 'normalize';
+@import 'fonts';
 
 body {
 	background-image: url('../images/main-background.jpg');
+	font-family: 'Montserrat';
 }
 
 .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	max-width: 1680px;
 	margin: 0 auto;
 	min-height: 100%;
 	padding: 5px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 }
 
 .header {
@@ -41,15 +43,15 @@ body {
 	}
 
 	&__label-title {
-		border: 1px solid black;
-		background: azure;
-		cursor: pointer;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 		padding: 5px;
 		margin-bottom: 5px;
+		border: 1px solid black;
+		background: azure;
+		cursor: pointer;
 
 		&:hover .main__svg {
 			transform: rotate(360deg);
@@ -62,11 +64,10 @@ body {
 
 	&__label-image {
 		display: block;
-
 		height: 0;
+		overflow: hidden;
 		background: rgb(255 255 255 / 42%);
 		cursor: pointer;
-		overflow: hidden;
 		text-align: center;
 	}
 
@@ -88,6 +89,10 @@ input {
 
 	&:checked + .main__label-title > .main__svg {
 		stroke: red;
+	}
+
+	&:checked + .main__label-title > .main__label-text {
+		color: red;
 	}
 
 	&:checked + .main__label-title {
